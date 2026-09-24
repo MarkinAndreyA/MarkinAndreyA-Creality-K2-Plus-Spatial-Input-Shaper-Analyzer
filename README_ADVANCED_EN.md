@@ -6,8 +6,6 @@ Extended guide covering parameters, engines, Measurement Gate, artifacts, diagno
 
 [Standard EN](README_EN.md) · [Русский Advanced](README_ADVANCED_RU.md)
 
-> This documentation is intended for publication on GitHub. Examples do not use real IP addresses, usernames, local paths, or other private data.
-
 ## How to use this guide
 
 The Advanced edition is for users who want to understand not only the GUI workflow but also the data, checks, and algorithmic paths behind each operation. It is also intended for diagnostics, reproducible testing, and preparing useful GitHub issues.
@@ -288,14 +286,6 @@ ViewPort is not part of the normal V1.0.0 UI. It is development-only and enabled
 | `PROFILE_SOURCE_DUPLICATE` | Same source assigned to multiple profile slots |
 | Profile provenance mismatch | Metadata proves a different profile |
 | `FROZEN_CHILD_FATAL` | Child worker failed before normal main; use session/startup log for diagnostics |
-
-## Privacy / GitHub publication policy
-
-- Do not attach unsanitized runtime logs to issues/releases; they may contain endpoints and absolute local paths.
-- Do not publish SSH keys, tokens, cookies, printer credentials, private configs, Google Drive IDs, or machine-specific network metadata.
-- Build demo Measurements from an allowlist of required RAW/metadata rather than copying everything and deleting obvious private files.
-- Keep RAW CSV byte-identical when textual headers contain no private data. After sanitation, rerun Analyzer and verify RAW_RECOGNIZED and zoning.
-- Use ZIP/Deflate, not 7z/LZMA2, for demo Measurement import containers.
 
 ## Recommended acceptance sequence for a new machine
 
