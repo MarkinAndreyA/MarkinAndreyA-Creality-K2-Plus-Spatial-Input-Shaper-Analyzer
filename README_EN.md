@@ -6,8 +6,6 @@ Step-by-step guide for regular users, from first launch to reports.
 
 [Русский](README_RU.md) · [Advanced EN](README_ADVANCED_EN.md) · [Advanced RU](README_ADVANCED_RU.md)
 
-> This documentation is intended for publication on GitHub. Examples do not use real IP addresses, usernames, local paths, or other private data.
-
 ## How to use this guide
 
 The standard edition is for users who need to launch the ready-to-use Windows package, analyze a Measurement, obtain recommendations and reports, without going into the application's architecture. Dangerous or rarely used functions are marked separately.
@@ -57,15 +55,15 @@ The standard edition is for users who need to launch the ready-to-use Windows pa
 
 > **Recommended first workflow:** if you already have a Measurement, start with it. This completely separates learning the Analyzer from live printer control.
 
-5. Open **Analysis**.
-6. Select source type: TAR/TAR.GZ/ZIP archive or Spatial report folder.
-7. Browse to the Measurement. A folder must contain RAW directly or contain a nested folder with RAW.
-8. For the first run, leave `cleanroom_upstream_2026` enabled. Enable `K2_NATIVE_EXACT` and `UPSTREAM_EXACT` only when their source roots are available.
-9. Leave CPU workers at 0 (Auto). If a supported NVIDIA/CuPy environment is available, enable **CUDA RAW FFT (CuPy)** and wait for the CUDA check.
-10. Do not change SCV, hard max_accel, zoning, or other numerical parameters until you understand the basic workflow.
-11. Click **Validate input**. After PASS, click **Run analysis**.
-12. The application opens the Log tab during calculation. After successful numerical analysis, static PNG files and the report are generated automatically.
-13. Open **Results**, review the recommendations, and generate a PDF if needed.
+1. Open **Analysis**.
+2. Select source type: TAR/TAR.GZ/ZIP archive or Spatial report folder.
+3. Browse to the Measurement. A folder must contain RAW directly or contain a nested folder with RAW.
+4. For the first run, leave `cleanroom_upstream_2026` enabled. Enable `K2_NATIVE_EXACT` and `UPSTREAM_EXACT` only when their source roots are available.
+5. Leave CPU workers at 0 (Auto). If a supported NVIDIA/CuPy environment is available, enable **CUDA RAW FFT (CuPy)** and wait for the CUDA check.
+6. Do not change SCV, hard max_accel, zoning, or other numerical parameters until you understand the basic workflow.
+7. Click **Validate input**. After PASS, click **Run analysis**.
+8. The application opens the Log tab during calculation. After successful numerical analysis, static PNG files and the report are generated automatically.
+9. Open **Results**, review the recommendations, and generate a PDF if needed.
 
 > **Partial dataset:** a dataset does not have to contain the full standard measurement set. Analyzer uses the available AX/AY points. Overall `max_accel` is produced only when both primary axes are present.
 
@@ -105,11 +103,11 @@ ANALYZER_STATUS=PASS
 
 ## Comparing COLD / LOW_TEMP / HIGH_TEMP
 
-14. Open **Profile Comparison**. Each profile has separate Archive and Folder selectors.
-15. Select at least two different sources. The same source cannot be assigned to two profile slots.
-16. If metadata explicitly proves the profile, the application will not allow LOW_TEMP to be assigned as COLD or HIGH_TEMP.
-17. If a legacy dataset lacks provable profile provenance, the application warns and offers to continue as legacy/unknown without guessing.
-18. Run profile comparison. After PASS, open the comparison HTML or generate PDF.
+1. Open **Profile Comparison**. Each profile has separate Archive and Folder selectors.
+2. Select at least two different sources. The same source cannot be assigned to two profile slots.
+3. If metadata explicitly proves the profile, the application will not allow LOW_TEMP to be assigned as COLD or HIGH_TEMP.
+4. If a legacy dataset lacks provable profile provenance, the application warns and offers to continue as legacy/unknown without guessing.
+5. Run profile comparison. After PASS, open the comparison HTML or generate PDF.
 
 **Compared data:** matching XYZ/axis points, Input Shaper changes, residual, max_accel and Practical Print Envelopes. Temperature slope is marked observational, not causal.
 
@@ -117,13 +115,13 @@ ANALYZER_STATUS=PASS
 
 > **Do not start here.** First verify that analysis of a saved Measurement works. Live Measurement includes thermal/belt/stress gates and physical printer motion.
 
-19. On **Measurement**, enter the printer IP/hostname and run the connection test.
-20. Select COLD, LOW_TEMP or HIGH_TEMP.
-21. For the first session, leave the grid at 3×3×3 and use **Generate plan without printer** first.
-22. Before live execution, make sure no print is active, the working volume is clear, and the printer is healthy.
-23. Run the mandatory Measurement Gate. It checks temperature profile, belt model/repeatability, and performs the stress sequence.
-24. After Gate PASS, Spatial acquisition can start. If automatic start is enabled, acquisition begins automatically after authorization.
-25. The finished Measurement appears in `runtime\measurements` and can then be used in Analysis.
+1. On **Measurement**, enter the printer IP/hostname and run the connection test.
+2. Select COLD, LOW_TEMP or HIGH_TEMP.
+3. For the first session, leave the grid at 3×3×3 and use **Generate plan without printer** first.
+4. Before live execution, make sure no print is active, the working volume is clear, and the printer is healthy.
+5. Run the mandatory Measurement Gate. It checks temperature profile, belt model/repeatability, and performs the stress sequence.
+6. After Gate PASS, Spatial acquisition can start. If automatic start is enabled, acquisition begins automatically after authorization.
+7. The finished Measurement appears in `runtime\measurements` and can then be used in Analysis.
 
 | Profile | Temperature mode |
 |---|---|
@@ -164,13 +162,6 @@ ANALYZER_STATUS=PASS
 | Comparison rejects source | Check duplicate assignment and provenance |
 | PDF language is wrong | Switch GUI language and generate PDF again |
 | Operation error | Open Log, then `runtime\logs`; keep the source Measurement until diagnostics are complete |
-
-## Sharing a Measurement safely
-
-- Do not publish original session/startup/fatal/build logs.
-- Before publication, inspect JSON/TXT/LOG/MD for IP/hostname, usernames, absolute paths, serial/MAC, tokens, keys and other secrets.
-- Keep RAW CSV byte-identical where possible if textual headers contain no private data.
-- For a demo Measurement use ordinary ZIP/Deflate; after sanitation rerun Analyzer and verify RAW count and zoning.
 
 ## Issue checklist
 
