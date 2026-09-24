@@ -51,7 +51,7 @@ Exact-engine fitting and report rendering are not GPU-accelerated.
 CPU operation remains available.
 
 For Portable CUDA use a short ASCII-only extraction path,
-for example `D:\K2Spatial\K2_Spatial_Analyzer\`.
+for example `C:\K2Spatial\K2_Spatial_Analyzer\`.
 
 ### Beta status
 
@@ -135,7 +135,7 @@ CUDA-ускорение является опциональным и приме�
 Для Portable-версии с CUDA используйте короткий путь только
 с ASCII-символами, например:
 
-`D:\K2Spatial\K2_Spatial_Analyzer\`
+`C:\K2Spatial\K2_Spatial_Analyzer\`
 
 ### Статус бета-версии
 
@@ -149,7 +149,7 @@ CUDA-ускорение является опциональным и приме�
 **Перед публикацией диагностических данных обязательно удаляйте приватную
 информацию:** пароли и другие учётные данные, SSH-ключи, приватный
 `printer.cfg`, IP-адрес/hostname, имена пользователей, абсолютные локальные
-пути, серийные номера/MAC и несаницированные runtime-логи или метаданные
+пути, серийные номера/MAC и несанированные runtime-логи или метаданные
 Measurement.
 
 ### Примечание о целостности Portable-архива
