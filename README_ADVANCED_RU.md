@@ -6,8 +6,6 @@
 
 [Обычная RU](README_RU.md) · [English](README_ADVANCED_EN.md)
 
-> Документация предназначена для публикации в GitHub. В примерах не используются реальные IP-адреса, имена пользователей, локальные пути и другие приватные данные.
-
 ## Как пользоваться этим руководством
 
 Advanced-редакция рассчитана на пользователей, которые хотят понимать не только последовательность действий в GUI, но и то, какие данные, проверки и алгоритмические контуры стоят за каждой операцией. Она также подходит для диагностики, подготовки issue в GitHub и воспроизводимого тестирования.
@@ -291,14 +289,6 @@ ViewPort не является частью обычного UI V1.0.0. Он о�
 | `PROFILE_SOURCE_DUPLICATE` | Один source назначен нескольким profile slots |
 | Profile provenance mismatch | Metadata доказывает другой профиль |
 | `FROZEN_CHILD_FATAL` | Ошибка child worker до штатного main; используйте session/startup log |
-
-## Privacy / GitHub publication policy
-
-- Не прикладывать к issue/release несанифицированные runtime logs: они могут содержать endpoint и абсолютные локальные пути.
-- Не публиковать SSH keys, токены, cookies, printer credentials, private configs, Google Drive IDs и machine-specific network metadata.
-- Demo Measurement создавать из allowlist необходимых RAW/metadata, а не методом «скопировать всё и удалить очевидное».
-- RAW CSV сохранять byte-identical, если textual headers не содержат private data. После sanitation повторно проверить Analyzer, RAW_RECOGNIZED и zoning.
-- Для demo import container использовать ZIP/Deflate, не 7z/LZMA2.
 
 ## Recommended acceptance sequence для новой машины
 
