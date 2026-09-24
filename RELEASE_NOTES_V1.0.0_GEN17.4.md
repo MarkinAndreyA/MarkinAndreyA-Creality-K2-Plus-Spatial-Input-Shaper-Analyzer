@@ -6,17 +6,16 @@ The application provides spatial Input Shaper measurement and analysis, K2/upstr
 
 ## Downloads
 
-Attach the release binaries below this text as **GitHub Release assets**:
+GitHub Release assets:
 
 - `K2_Spatial_Analyzer_V1.0.0_Portable_x64.7z` — Portable Windows x64 package. No installation required. Extract to a short ASCII-only path.
 - `K2_Spatial_Analyzer_V1.0.0_x64.msi` — Windows x64 installer.
 
-If a sanitized demo dataset is included:
-- `K2_SPATIAL_MEASUREMENT_LOW_TEMP_DEMO.zip` — example Measurement for learning the analysis workflow without running live printer measurement.
+The LOW_TEMP Measurement dataset is not part of the recommended public release until a separate privacy-sanitation pass is completed.
 
 ## Recommended first run
 
-Start with the Portable package and a saved/demo Measurement. Do not connect the printer for the first analysis. After confirming that analysis and reporting work, review the documentation before using live Measurement or Input Shaper write.
+Start with the Portable package and a saved Measurement. Do not connect the printer for the first analysis. After confirming that analysis and reporting work, review the documentation before using live Measurement or Input Shaper write.
 
 ## Documentation
 
@@ -24,6 +23,8 @@ Start with the Portable package and a saved/demo Measurement. Do not connect the
 - [English Advanced Guide](README_ADVANCED_EN.md)
 - [Русское руководство](README_RU.md)
 - [Расширенное руководство на русском](README_ADVANCED_RU.md)
+- [Third-Party Notices](THIRD_PARTY_NOTICES.md)
+- [Third-Party License Inventory](THIRD_PARTY_LICENSES.md)
 
 ## Important safety information
 
@@ -35,7 +36,7 @@ Saved Measurement analysis and report generation do not require printer motion.
 
 CUDA acceleration is optional and applies to RAW Welch FFT/PSD preprocessing. Exact-engine fitting and report rendering are not GPU-accelerated. CPU operation remains available.
 
-For Portable CUDA use a short ASCII-only extraction path, for example `D:\K2Spatial\K2_Spatial_Analyzer\`.
+For Portable CUDA use a short ASCII-only extraction path, for example `D:\\K2Spatial\\K2_Spatial_Analyzer\\`.
 
 ## Beta status
 
